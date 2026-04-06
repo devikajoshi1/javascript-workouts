@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operation</title>
+</head>
+<body>
+    <h1>CRUD operation</h1>
+    <h3>Create</h3>
+    <script>
+        const cart = {
+            item : "Laptop",
+            price : 50000,
+            quantity:1
+        };
+        cart.color = "Black"; //add new key or property to existing object. 
+        document.write(cart["item"] + "<br>" + cart["price"] + "<br>" + cart["color"]);
+    </script>
+
+    <h3>update</h3>
+    <script>
+         const cartt = {
+            item : "Laptop",
+            price : 50000,
+            quantity:1
+        };
+        cartt.quantity = 2; //update quantity using update operation (updating values)
+        document.write(cartt["item"] + "<br>" + cartt["price"] + "<br>" +cartt["quantity"]);
+    </script>
+
+    <h3>Delete</h3>
+    <script>
+         const carttd = {
+            item : "Laptop",
+            price : 50000,
+            quantity:1,
+            color : "black"
+        };
+        delete carttd.color;  // delete color using delete operation. (delete property and value)
+        document.write(carttd["item"] + "<br>" + carttd["price"] + "<br>" +carttd["quantity"] + 
+            "<br>" + carttd["color"]
+        );
+    </script>
+
+    <h3>Object method</h3>
+    <script>
+        document.write(Object.keys(carttd)+"<br>");  //display only keys of object (property name)
+        document.write(Object.values(carttd)+"<br>"); //display only values of  
+        document.write(Object.entries(carttd)+"<br>");  //display both  keys and values of object
+    </script>
+
+    <h3>Shorthand property</h3>
+    <script>
+        let name = "Rahul";
+        let age = 25;
+
+        const person = {name , age};
+        console.log(person);
+        document.write(JSON.stringify(person)); //to make this convert into a string (it want to accept the json formate)
+    </script>
+
+    <h3>Computed property</h3>
+    <script>
+        const keyName = "email";
+        const user ={
+            [keyName] : "rahul@gmail.com"
+        };
+        document.write(user.email);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+        <h3>function Declaration</h1>
+        <script>
+            function greet(name) {
+                return `hello , ${name}`; //template string `` and ${}
+            }
+            document.write(greet("Student"));
+
+        </script>
+
+        <h3>function Expression</h3>
+        <script>
+            let num1 = 5;
+            let num2 = 10;
+            let result = `The sum of ${num1} and ${num2} is ${num1 + num2}`;  // arithmetic expression with template string
+            document.write(result);
+        </script>
+
+        <h3>Arrow function</h3>
+        <script>
+            const hello = (name) => `hello ${name}`; //remove {} , function name , return keyword
+            document.write(hello("Students"));
+        </script>
+
+        <h3>Default parameters</h3>
+        <script>
+            function dp(name="guest") { //default value if thr parameter not pass  
+                return `hello , ${name}`;
+            }
+            document.write(dp());
+        </script>
+
+        <h3>Anonymous function</h3>
+        <script>
+            (function () { //function without function name and unname function have to use () for call function
+                document.write("welcome to ITVEDANT");
+            })
+            ();
+        </script>
+
+</body>
+
+</html>

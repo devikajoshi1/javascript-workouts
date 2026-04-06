@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+
+<body>
+    <h3>Object literal</h3>
+    <script>
+        const user = {  //creating an object
+            name: "Riya", //first property of the object   //key and value
+            role: "Developer" //second property 
+        };
+        document.write(user.name + " " + user.role +"<br>"); // to display the object
+        document.write("<br>")
+
+        const student = {
+            name : "Devika",
+            rollnum: 23,
+            degree : "B.E",
+            collage : "GTU"
+        }
+        document.write(student.name + "<br>");
+        document.write(student.rollnum + "<br>");
+        document.write(student.degree + "<br>");
+        document.write(student.collage + "<br>");
+
+    </script>
+
+    <h3>New Keyword </h3>
+    <script>
+        const users = new Object(); // used new keyword to create an object
+        users.name = "sonali ";
+        user.role = "Testing"
+        document.write (users.name + "  " +user.role);
+        
+    </script>
+
+    <h3>Constructor function</h3>
+    <script>
+        function Person(name , age) {
+            this.name = name;
+            this.age = age;
+        }
+        p = new Person("Roshan " , 30); //creating  a  new object from the existing object 
+        document.write(p.name + " " +p.age);
+    </script>
+
+    <h3>Nested object</h3>
+    <script>
+        const employee = {
+            name:"Riya",
+            address :{   //object inside an object 
+                city:"Pune",
+                pincode : 411001
+            }
+        };
+        document.write(employee.name + "<br> " + employee.address.city + "<br>  " + employee.address.pincode);
+    </script>
+
+      <h3>Dot notation</h3>
+    <script>
+        const cart = {
+            item : "Laptop",
+            price : 50000,
+            "discount price":45000  //this is not working because of the space 
+        }
+        document.write(cart.item + "<br>" + cart.price + "<br>" + cart["discount price"])
+    </script>
+
+    <h3>Bracket notation</h3>
+    <script>
+        const cartt = {
+            item : "Laptop",
+            price : 50000,
+            "discount price":45000     //for run this program use bracket notation
+        }
+        document.write(cart["item"] + "<br>" + cart["price"] + "<br>" + cart["discount price"])
+    </script>
+</body>
+
+</html>

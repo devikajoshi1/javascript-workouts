@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <h3>Functions</h3>
+    <script>
+        function greet(name) {
+            document.write("hello, " + name + "!"); //statement to be executed
+        }
+        greet("Student"); 
+    </script>
+    <h3>String Methods to uppercase and lowercase</h3>
+    <script>
+        let text = "javascript";
+        document.write(text.toUpperCase());
+        document.write("<br>");
+        document.write(text.toLowerCase());
+    </script>
+    <h3>String Trim method</h3>
+    <script>
+        var s1 = "    javascript is case sensitive     ";
+        document.write(s1.trim());
+    </script>
+
+    <h3>Math method</h3>
+    <script>
+        document.write(Math.PI + "<br>");
+        document.write(Math.max(1, 2, 3) + "<br>");
+        document.write(Math.random() + "<br>")
+    </script>
+
+
+    <h3>Date method</h3>
+    <script>
+        var date = new Date();
+        document.write("current date " + date.getDate() + "<br>");
+        document.write("current day " + date.getDay() + "<br>");
+        document.write("current month " + (date.getMonth()+1) + "<br>");
+        document.write("current hours " + date.getHours() + "<br>");
+        document.write("current time " + date.getTime() + "<br>");
+        document.write("current year " + date.getFullYear()+ "<br>");
+    </script>
+
+    <h3>Array method</h3>
+    <script>
+        let arr = [1,2,3];
+        arr.push(4);
+        document.write(arr + "<br>");
+        arr.pop();
+        document.write(arr + "<br>");
+
+        let squares = arr.map(arr => arr*arr)
+        document.write(squares);  // 
+    </script>
+
+    <h3>Pure function</h3>
+    <script>
+        function income(salary) {
+            document.write(salary * 2); //same input same output
+        }
+        income(20000);
+    </script>
+
+     <h3>Impure function</h3>
+    <script>
+        let increment= 2500;
+        function income(salary) {
+            document.write(salary * 2 + increment); // same input diff output
+        }
+        income(20000);
+    </script>
+
+
+
+     <h3>First class function</h3>
+    <script>
+        const hello = function(name) {
+            document.write("hello, " + name ); //assigned to variable
+        };
+        hello("Student"); 
+    </script>
+
+
+    <h4>Higher order function</h4> 
+    <script>
+        function repeat(action,times) {
+            for (let i=0; i<times ; i++){
+                action();  //take function as a argument
+            }
+        }
+        function sayHello() {
+            document.writeln("hello");
+        }
+        repeat(sayHello,3);
+    </script>
+    
+</body>
+
+</html>

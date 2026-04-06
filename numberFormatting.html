@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number formatting</title>
+</head>
+<body>
+    <h3>Math toFixed</h3>
+    <script>
+        let num = 123.4567;
+        document.write(num.toFixed(2)); //fixing the digits next to the . 
+    </script>
+    <h3>Math to Precision</h3>
+    <script>
+        let num1 = 123.4567;
+        document.write(num1.toPrecision(4)); //fixing thi digit from the beginning
+    </script>
+     <h3>Math to round</h3>
+    <script>
+        let num2 = 123.4567;
+        document.write(Math.round(num2)); //round the entire value
+    </script>
+     <h3>math to floor</h3>
+    <script>
+        let num3 = 123.4567;
+        document.write(Math.floor(num3)); // round the value to the lowest num
+    </script>
+     <h3>math to ceil</h3>
+    <script>
+        let num4 = 123.4567;
+        document.write(Math.ceil(num3)); // round the value to the highest num
+    </script>
+
+</body>
+
+</html>

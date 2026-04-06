@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>While loop</p>
+    <script>
+        let currency;
+        let value ;
+        let total = 0;
+
+        while(true){
+            currency =(prompt("currency is present enter y"));
+            if(currency == "y"){
+                value = parseInt(prompt("Enter the note amount"));
+                if(value == 10 || value == 20 || value == 50 || value == 100 ||value == 500){
+                    console.log(value + "Real currency");
+                    total+=value;
+                }
+                else{
+                    console.log("fake currency");
+                }
+            }
+            else{
+                break;
+            }  
+        }
+        console.log(total);
+
+    </script>
+</body>
+</html>

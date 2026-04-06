@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <button onclick="generateOtp()">Generate otp</button><br>
+        <input type="text" id="otpinput" placeholder="Enter OTP">
+        <br>
+        <button onclick="verifyOtp()"> verify otp</button>
+    </section>
+    <script>
+        let otp ;
+        function generateOtp() {
+            otp = Math.floor(1000 + Math.random()*9000);
+            alert("your otp is :"+otp)
+            
+        }
+        function  verifyOtp(){
+            let userOtp = document.getElementById("otpinput").value;
+            if(userOtp == otp){
+                alert("otp verify")
+            }
+            else{
+                alert("wrong otp");
+            }
+        }
+        // let user_inp = prompt("Enter your name"+"  " );
+        // document.write(user_inp);
+        //   let first_name = prompt("Enter your first name");
+        // document.write(first_name);
+    </script>
+</body>
+
+</html>

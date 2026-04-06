@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Loops</title>
+</head>
+
+<body>
+    <h3>For loop</h3>
+    <h4>Definition : For loop in Javascript is the most commonly used loop to repeat a
+        block of code a specific num of times<br />
+        syntax: for(initialization ; condition ; increment / decrement) {
+        //code to be executed
+        } <br /><br />
+        Initialization -> Run once(start value)<br />
+        condition -> checked before each iteration<br />
+        increment / decrement -> update loop variable
+    </h4>
+    <script>
+        for (let i = 1; i <= 5; i++) {      //starts from 1 and till 5 it will printed
+            document.write("Number : " + i + "<br>")    //to print it as a output we mention i directly
+        }
+    </script>
+
+    <h3>While loop</h3>
+    <h4>Definition : the while loop executed the set of statement as long as the condition is true.
+        <br />
+        condition checked before executed <br />
+        If condition is false initially -> loop won't run <br />
+        syntax: while(expression){
+        statement to be executed
+        }<br />
+        the length is unknown it will run as long as it is false
+    </h4>
+    <script>
+        let i = 1; //creating variable to store values
+        while (i <= 5) {       //check the condition before start looping
+            document.write(i + "<br>");        //to print the value one by one
+            i++;
+        }
+    </script>
+
+    <h3>do while loop</h3>
+    <h4>Execute at least one time even if the condition is false<br>
+        syntax: <br>do{
+        statement to be executed<br>
+        increment<br>
+
+        }while (expression){
+
+        }
+    </h4>
+    <script>
+        let k = 1;  //creating a variable
+
+        do {    //do execute the code at least once. (no condition for run)
+            document.write("value : " + k + "<br>"); //print the statement
+            k++;    //if the condition is true it will do the increment
+        } while (k <= 5);       //check the condition
+
+    </script>
+
+    <h3>For-in loop</h3>
+    <h4>The For-in is used to loop through object properties<br>
+        In each iteration, one property from object is assigned to a
+        variablename and this loop continues till all the properties of object are exhausted<br>
+        syntax : <br> for (variable name in object){
+
+        }
+    </h4>
+    <script>
+        const student = {       //creating an object
+            name : "Rahul",
+            age : 20,
+            course : "BCA"
+        }
+        for (let key in student){       //applying for-in loop (assigning the properties of the object to a variable)
+            document.write(key + " : " + student[key] + "<br>")   //receiving the property and displaying it 
+        }
+    </script>
+
+    <!-- <script>
+        var aProperty;
+        for (aProperty in navigator){       //assigning the variable to the object called navigator
+            document.write(aProperty , "<br>")      //to display all the properties of the object
+        }
+    </script> -->
+</body>
+
+</html>

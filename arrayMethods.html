@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array methods</title>
+</head>
+
+<body>
+    <h3>Array</h3>
+    <script>
+        let box = ["Apple", "Banana", "red", 89]; //creating array
+        document.write(box);
+    </script>
+
+    <h3>Push method</h3>
+    <script>
+        let box1 = ["Apple", "Banana", "red", 89];
+        box1.push(10); //add element to at last of the array
+        document.write(box1);
+    </script>
+
+    <h3>unshift method</h3>
+    <script>
+        let box2 = ["Apple", "Banana", "red", 89];
+        box2.unshift(10);  //add element at the begging of the array
+
+
+        //include method. it will check whether the arry element is present or not - true or false
+        document.write(box2.includes("table") + "<br>");
+        document.write(box2);
+
+
+
+    </script>
+
+    <h3>Array literal using loop</h3>
+    <script>
+        let box3 = ["Apple", "Banana", "red", 89];
+        for (i = 0; i < box.length; i++) {
+            document.write(box3[i] + "<br>");
+        }
+    </script>
+
+    <h3>Length method</h3>
+    <script>
+        let box4 = ["Apple", "Banana", "red", 89];
+        document.write(box4.length);  //to find the length of array
+    </script>
+
+    <h3>Type of method</h3>
+    <script>
+        let box5 = ["Apple", "Banana", "red", 89];
+        document.write(typeof box5); //datatype of the array
+    </script>
+
+
+    <h3>Type of loops</h3>
+
+    <h3>For loop</h3>
+    <script>
+        let number = [10, 20, 30];  //for loop print each value 
+        for (let i = 0; i < number.length; i++) {
+            document.write(number[i] + "<br>");
+        }
+    </script>
+
+    <h3>For Each</h3>
+    <script>
+        let num1 = [10, 20, 30];
+        num1.forEach(num => {
+            document.write(num + "<br>"); //focus on action not looping
+        })
+    </script>
+
+    <h3>For of</h3>
+    <script>
+        let num2 = [40, 20, 30];
+        for (let num of num2) {
+            document.write(num + "<br>");  //easy readable and 
+        }
+    </script>
+
+    <h3>Splice method</h3>
+    <script>
+        let allOrders = ["Laptop", "Mouse", "Keyboard", "headphones"];   //creating array
+        document.write(allOrders + "<br>");
+        allOrders.splice(1, 1, "pen"); //splice value from index 1 and remove value from index num 1
+        document.write(allOrders + "<br>");
+    </script>
+
+    <h3>Concat method</h3>
+    <script>
+        let allOrderss = ["Laptop", "Mouse", "Keyboard", "headphones"];
+        let newOrders = ["Monitor", "webcam"];
+        let combinedOrders = allOrderss.concat(newOrders);  //combining two array
+        document.write(combinedOrders);
+    </script>
+
+    <h3>Sort method</h3>
+    <script>
+        let orders = ["Laptop", "Mouse", "Keyboard", "Headphones"];  //
+        document.write(orders.sort());
+    </script>
+
+    <h3>Reverse </h3>
+    <script>
+        document.write(orders.sort().reverse());  //reverse the array (for the descending order you need to put reverse in last )
+    </script>
+
+    <h3>Slice method</h3>
+    <script>
+        document.write(orders.slice(1, 3));  //slice the required array elements alone using slice(start , end)
+    </script>
+
+    <h3>pop method</h3>
+    <script>
+        document.write(allOrderss.pop() + "<br>");  //remove last element of an array
+        document.write(allOrderss);
+    </script>
+
+    <h3>Shift method</h3>
+    <script>
+        let orderss = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        orderss.shift();   //remove first element of an array
+        document.write(orderss);
+    </script>
+
+    <h3>Indexof method</h3>
+    <script>
+        let indexOfMethod = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        document.write(indexOfMethod.indexOf("Keyboard"));  //return the index of the element or -1 if not found
+    </script>
+
+    <h3>Join method</h3>
+    <script>
+        let joinMethod = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        document.write(joinMethod.join(" - "))     //join value using the separator ( - ,) converting into single string
+    </script>
+
+    <h3>Delete method</h3>
+    <script>
+        let deleteMethod = ["Laptop", "Mouse", "Keyboard", "Headphones"]; //
+        delete deleteMethod[1];    //delete the particular element by using the index value and the array will have empty space 
+        document.write(deleteMethod);
+    </script>
+
+    <h3>Map method</h3>
+    <script>
+        let number1 = [1, 2, 3];
+        let result = number1.map((n, i) => n * 2);  //n is a temp value and i is a index value multiply each num with 2
+        document.write(result + "<br>");
+
+        let mapMethod = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        let mappedOrders = mapMethod.map(item => item.toUpperCase());  //map each value and convert to uppercase
+        document.write(mappedOrders);
+    </script>
+
+    <h3>Filter method</h3>
+    <script>
+        let nums = [1, 2, 3];
+        let resultt = nums.filter(n => n > 1);
+        document.write(resultt + "<br>");
+
+        let filterMethod = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        let filteredOrders = filterMethod.filter(item => item.length > 5);  //return value which is greaterthen 5 letters 
+        document.write(filteredOrders);
+
+    </script>
+
+    <h3>Reduce method</h3>
+    <script>
+        let reduceMethod = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        let totalChars = reduceMethod.reduce((sum, item) => sum + item.length, 0); //return single value 
+        document.write(totalChars);
+    </script>
+
+    <h3>Spread operator</h3>
+    <script>
+        let spreadoperator = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        let copiedoperator = [...spreadoperator];   //converting all the element into individual values ans storing it into copy array
+        document.write(copiedoperator);
+    </script>
+
+    <h3>Rest operator</h3>
+    <script>
+        let restOperator = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+
+        let [firstOrder, ...remainingOrder] = restOperator;  //first element alone alone we have to define separately then the remaining  
+
+        document.write("First Order: " + firstOrder + "<br>");
+        document.write("Remaining Order: " + remainingOrder + "<br>");
+    </script>
+
+    <h3>Array Destructuring</h3>
+    <script>
+        let numss = [10, 20, 30];
+        let [a, b, c] = numss;
+        document.write(a +"<br>");
+        document.write(b +"<br>");
+        document.write(c +"<br>");
+
+    </script>
+
+</body>
+
+</html>

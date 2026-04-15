@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String methods</title>
+</head>
+
+<body>
+    <h3>Length</h3>
+    <script>
+        let msg = "Hi JS";
+        document.write(msg.length); //to find the length of the string
+    </script>
+
+    <h3>char at</h3>
+    <script>
+        let word = "Javascript";
+        document.write(word.charAt(0) + "<br>");  //print any particular index value or char 
+        document.write(word.charAt(4) + "<br>");
+        document.write(word.charAt(9) + "<br>");
+    </script>
+
+    <h3>Repeat Method</h3>
+    <script>
+        let star = "*";
+        document.write(star.repeat(5)); //repeat particular task
+    </script>
+
+    <h3>Includes Method</h3>
+    <script>
+        let msgg = "I love Javascript";
+        document.write(msgg.includes("Javascript")); //return true or false 
+    </script>
+
+    <h3>Slice method</h3>
+    <script>
+        let sliceMethod = "Good Morning Javascript";
+        document.write(sliceMethod.slice(5, 12) + "<br>");  // extract specific part of the string(startind,endind)
+        document.write(sliceMethod.slice(13) + "<br>");
+    </script>
+
+    <h3>Replace</h3>
+    <script>
+        let replaceMethod = "Good Morning Javascript";
+        document.write(replaceMethod.replace("Morning", "Evening")); //replace is replace only one time
+    </script>
+
+    <h3>ReplaceAll</h3>
+    <script>
+        let replaceAllMethod = "Good Morning Javascript Good Morning Html";
+        document.write(replaceAllMethod.replaceAll("Morning", "Evening")); //replaceAll replace all same thing for many time
+    </script>
+
+    <h3>Indexof</h3>
+    <script>
+        document.write(sliceMethod.indexOf("Morning")); //find the position of the value within the string
+    </script>
+
+    <h3>Value of</h3>
+    <script>
+        let ValueOF = "Good Morning Javascript";
+        document.write(ValueOF.valueOf()); //return actual value of a string as it is 
+    </script>
+
+    <h3>Starts With</h3>
+    <script>
+        let startsMsg = "Good Morning Javascript";
+        document.write(startsMsg.startsWith("Morning")); //check if the strings start with a specific word return true of false
+    </script>
+
+
+    <h3>Ends With</h3>
+    <script>
+        let endsMsg = "Good Morning Javascript";
+        document.write(endsMsg.endsWith("Javascript")); //check if the string ends with a specific word return true of false
+    </script>
+
+    <h3>SubStr</h3>
+    <script>
+        let str = "Good Morning Javascript";
+        document.write(str.substr(5, 6)) //ind and length
+    </script>
+
+    <h3>SubString</h3>
+    <script>
+        let subStr = "Good Morning Javascript";
+        document.write(subStr.substring(0, 4)); //give output between startind and endind
+    </script>
+
+    <h3>Slit Method</h3>
+    <script>
+        let slitMethod = "Good Morning Javascript";
+        document.write(slitMethod.split(" ")); //break the sting into multiple parts and store them in array 
+    </script>
+
+    <h3></h3>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <div id="div1">
+        <h2 id="title">Heading1</h2>
+        <p class="info">Para 1</p>
+        <h2>Heading2</h2>
+        <p class="info">Para 2</p>
+
+    </div>
+    <h2>Heading3</h2>
+    <script src="script.js"></script>
+    <input type="button" value="change" onclick="change()">
+    <!--  calling function to change title value = button name -->
+
+    <h3>getElementById()</h3>
+    <script>
+        function getCube() { //to get the input and multiple the number three times to get cube of a number
+            var number = document.getElementById("number").value; //to store the input value
+            alert(number * number * number); //output should print as an alert box
+        }
+    </script>
+    <form>
+        Enter No:<input type="text" id="number" name="number" /><br>
+        <input type="button" value="cube" onclick="getCube()">
+    </form>
+
+    <h3>getElementByName()</h3>
+    <script>
+        function totalelements() {
+            var allgenders = document.getElementsByName("gender"); //to store the value of the elementsby name
+            alert("Total Genders : " + allgenders.length); //to get the total length of thr gender
+        }
+
+    </script>
+    <form>
+        Male:<input type="radio" name="gender" value="male">
+        Female:<input type="radio" name="gender" value="female">
+
+        <input type="button" onclick="totalelements()" value="Total gender">
+    </form>
+
+    <h3>getElementByTagName</h3>
+    <script>
+        function countpara() {
+            var totalpara = document.getElementsByTagName("p"); //storing the tag in the variable called totalpara
+            alert(" Total p tags are :" + totalpara.length); //find the length of the tag(how many tags in side this page).
+        }
+
+    </script>
+    <p>This is a paragraph</p>
+    <p>Here we rae going to count total number of paragraph by getElementByTagName().method</p>
+    <p>Let's see the simple example</p>
+    <button onclick="countpara()">Count Paragraph</button>
+
+    <h3>getElementByClassName</h3>
+    <div class="Class">
+        This is a simple class implementation
+    </div>
+    <script>
+        var x = document.getElementsByClassName("Class");
+        document.write("On calling x , it will return an array-like object : <br>" + x);  // print or return html object
+    </script>
+    <p class="text">Hello</p>
+    <p class="text">World</p>
+    <script>
+        const items = document.getElementsByClassName("text"); //to get the class value
+        for (let i = 0; i < items.length; i++) { //iterate all value of the p 
+            console.log(items[i].textContent); //text content will shown even the text element also we used it in the console
+        }
+    </script>
+
+    <h3>Query Selector</h3>
+    <script>
+        const elder = document.querySelector("p"); //want to take the p tag
+        document.write(elder.textContent); //only the first para tag content alone will get printed
+    </script>
+
+    <h3>Query SelectorAll</h3>
+    <p class="texts">Hello</p>
+    <p class="texts">World</p>
+    <script>
+        const itemsi = document.querySelectorAll(".texts"); //it will take all the class with texts name
+        itemsi.forEach(item => { //it will take each class/element as an individual element and run the function
+            item.style.color = "blue";
+        });
+
+    </script>
+    <h2>Append child method</h2>
+    <ul id="list">
+        <li>Item 1</li>
+    </ul>
+    <script>
+        newItem = document.createElement("li")//ccreate the var to store the elemnt
+        newItem.textContent = "Item 2"
+        const list = document.getElementById("list");
+        list.appendChild(newItem)
+    </script>
+    <h2>append()</h2>
+    <ul id="lists">
+        <li>Item 1</li>
+    </ul>
+    <script>
+        const lists = document.getElementById("lists");//create the element id
+
+        const newItems = document.createElement("li");//storing the new elemnt in the new  variaable
+        newItems.textContent = "Item 3";//text content will make the content visible
+        lists.append(newItems);//append the child(item 3) the parent to the existing list 
+    </script>
+    <h2>innerText & textContent</h2>
+    <p id="test">Hi <span style="display:none"> Hidden </span> User </p>
+
+    <script>
+        const el = document.getElementById('test');
+        document.write(el.innerText);//Hi User// hidden text not printed
+        document.write("<br>");
+        document.write(el.textContent);//Hi User//hidden text also visible
+    </script>
+</body>
+
+</html>

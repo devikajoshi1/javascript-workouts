@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>OTP verification</h3>
+    <button onclick="sendOTP()">Send OTP</button>
+    <p id="msg"></p>
+    <script>
+        function sendOTP() {
+            document.getElementById("msg").innerHTML = "sending OTP";  //change or update html text
+
+            setTimeout(() => {
+                document.getElementById("msg").innerHTML = "OTP Sent"
+            }, 3000); //second  only one time 
+        }
+    </script>
+
+    <h3>SetInterval</h3>
+    <p>New Notifications : <span id="count">0</span></p>
+    <script>
+        let count = 0;
+        setInterval(() => {
+            count++;  //increase count by 1
+            document.getElementById("count").innerText = count;  //change html text
+        }, 1000);
+    </script>
+</body>
+
+</html>

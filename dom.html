@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+  
 </head>
 
 <body>
@@ -98,7 +99,7 @@
         <li>Item 1</li>
     </ul>
     <script>
-        newItem = document.createElement("li")//ccreate the var to store the elemnt
+        newItem = document.createElement("li")//create the var to store the elemnt
         newItem.textContent = "Item 2"
         const list = document.getElementById("list");
         list.appendChild(newItem)
@@ -110,7 +111,7 @@
     <script>
         const lists = document.getElementById("lists");//create the element id
 
-        const newItems = document.createElement("li");//storing the new elemnt in the new  variaable
+        const newItems = document.createElement("li");//storing the new elemnt in the new  variable
         newItems.textContent = "Item 3";//text content will make the content visible
         lists.append(newItems);//append the child(item 3) the parent to the existing list 
     </script>
@@ -123,6 +124,40 @@
         document.write("<br>");
         document.write(el.textContent);//Hi User//hidden text also visible
     </script>
+
+    <h3>getAttribute()</h3>
+    <a id="mylink" href="https://example.com" title="oldTitle">Visit Website</a>
+    <script>
+
+        let link = document.getElementById("mylink");
+        let linkHref = link.getAttribute("href"); //getAttribute only read the data  //href tag
+        let linkTitle = link.getAttribute("title");  //title tag
+        document.write(linkHref + "<br>");
+        document.write(linkTitle);
+        console.log(linkHref);
+        console.log(linkTitle);
+    </script>
+
+    <!-- <h3>setAttribute()</h3>
+    <img id="myImg" src="bg-img.jpeg" alt="oldimg" width="150">
+    <script>        //set new img setAttribute add or change or update element
+        let img = document.getElementById("myImg");
+        img.setAttribute("src", "img.jpeg");  //first parameter is where to change and second parameter is what to change 
+        img.setAttribute("alt", "New Image");
+    </script> -->
+
+    <h3>setAttribute()</h3>
+    <button onclick="changeImg()">Change Image</button>
+    <img id="myImg" src="bg-img.jpeg" alt="oldimg" width="150">
+    <script>        //set new img setAttribute add or change or update element
+        let img = document.getElementById("myImg");
+        function changeImg() {
+            img.setAttribute("src", "img.jpeg");  //first parameter is where to change and second parameter is what to change 
+            img.setAttribute("alt", "New Image");
+        }
+    </script>
+
+
 </body>
 
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+        .active{
+            background-color: green;
+            color: white;
+            padding: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Css Manipulation</h3>
+    <h3>Css classList</h3>
+    <button onclick="addClass()">Add</button>
+    <button onclick="removeClass()">Remove</button>
+    <button onclick="toggleClass()">Toggle</button>
+    <div id="box">I am a box</div>
+    <script>
+        let box = document.getElementById("box");
+        //add
+        function addClass() {
+            box.classList.add("active");
+        }
+        //remove
+        function removeClass() {
+            box.classList.remove("active");
+        }
+        //toggle
+        function toggleClass() {
+            box.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

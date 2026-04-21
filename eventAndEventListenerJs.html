@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event and Event Listener</title>
+</head>
+
+<body>
+    <h3>addEventListener</h3>
+    <button id="mybtn">Click me</button>
+    <script>
+        const btn = document.getElementById("mybtn");
+        //add event listener
+        btn.addEventListener("click", () => {
+            console.log("button was clicked");
+        })
+    </script>
+    <h3>removeEventListener</h3>
+    <button id="btnn">Click me</button>
+    <script>
+        const btnn = document.getElementById("btnn");
+        function handleClick() {
+            console.log("clicked");
+
+        }
+        //add
+        btnn.addEventListener("click", handleClick); //add event syntax
+        //remove event after 3 sec
+        setTimeout(() => { //to set timeout for the event to happen 
+            btnn.removeEventListener("click", handleClick); //remove syntax
+            console.log("Event remove"); //to conform that event is removed
+
+        }, 3000); //we are giving timing for the event to end with in 3 sec
+    </script>
+    <h3>old method</h3>
+    <button onclick="alert('hi')">Click</button> <!-- run only one time -->
+
+    <h3>Multiple event listener on single Element</h3>
+    <button id="btni">Click me</button>
+    <script>
+        const btni = document.getElementById("btni"); //creating a variable to to do the action
+        function sayHi() {
+            console.log("clicked");
+        }
+        btni.addEventListener("click", sayHi); //calling say hi function and print clicked in console
+        btni.addEventListener("click", () => console.log("log"));
+        // btni=addEventListener("click",()=>console.log("track"));
+    </script>
+
+    <h3>Mouse and keyboard event</h3>
+
+    <div id="boxi">Hover / Click me</div>
+    <input type="text" id="inputBox" placeholder="Type something...">
+    <p id="output"></p>
+
+    <script>
+        const boxi = document.getElementById("boxi");
+        const input = document.getElementById("inputBox");
+        const output = document.getElementById("output");
+
+        // Mouse events
+        boxi.addEventListener("dblclick", () => {
+            output.textContent = "Double clicked"; //dbclick
+        });
+
+        boxi.addEventListener("mousedown", () => {
+            output.textContent = "Mouse button pressed"; //mouse press
+        });
+
+        boxi.addEventListener("mouseup", () => {
+            output.textContent = "Mouse button released"; //mouse release
+        });
+
+        boxi.addEventListener("mouseleave", () => {
+            output.textContent = "Mouse left the box"; //mouse left
+        });
+
+        boxi.addEventListener("mousemove", () => {
+            output.textContent = "Mouse moving inside box";
+        });
+
+        //keyboard event
+        input.addEventListener("keydown", () => {
+            output.textContent = "key press down";
+        })
+        input.addEventListener("keyup", () => {
+            output.textContent = "key press up";
+        })
+        input.addEventListener("keypress", () => {
+            output.textContent = "key press ";
+        })
+
+    </script>
+
+    <h3>Event object property Example</h3>
+    <h2>Event = object that gives information about what happened (about the click)</h2>
+    <a href="https://www.google.com" id="links">Go to google</a>
+    <p id="outputs"></p>
+    <script>
+        const links = document.getElementById("links"); //store the element in the variable
+        const outputs = document.getElementById("outputs"); //store the output in the element display
+
+        links.addEventListener("click", function(event) {
+            //stop default action
+            event.preventDefault(); //stop the page reload and display output in the same page without reload
+            outputs.innerHTML =                 //to print the output in the same html page
+                "event.type : " + event.type +"<br>" + //it will display the type of the event
+                "event.target : " +event.target.tagName +"<br>" +  //it will display element
+                "event.currentTarget : " +event.currentTarget.tagName +"<br>" + //display current target
+                "event.defaultPrevented : " +event.defaultPrevented; //display true if it worked 
+        });
+    </script>
+
+</body>
+
+</html>

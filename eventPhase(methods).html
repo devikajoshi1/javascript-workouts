@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //capturing phase
+        // document.addEventListener("DOMContentLoaded", () => { //DOMContentLoaded is dom ready load wait for everything
+        //     const grandparent = document.getElementById("grandparent"); //crating variable to store and so event action(to use html element in javascript)
+        //     const parent = document.getElementById("parent");
+        //     const child = document.getElementById("child");
+
+        //     grandparent.addEventListener("click", () =>
+        //         console.log("Grandparent - capturing"), true  //true for capturing starts from top 
+        //     );
+        //     parent.addEventListener("click", () =>
+        //         console.log("Parent - capturing"), true
+        //     );
+        //     child.addEventListener("click", () =>
+        //         console.log("Child - capturing"), true
+        //     );
+        // });
+
+
+        //target + bubbling phase 
+            document.addEventListener("DOMContentLoaded", () => { //DOMContentLoaded is dom ready (load the page using new Dom method to load faster)
+            const grandparent = document.getElementById("grandparent"); //crating variable to store and so event action
+            const parent = document.getElementById("parent");
+            const child = document.getElementById("child");
+
+             child.addEventListener("click", () =>
+                console.log("Child - Target / Bubbling")    //(starts from only target element in the target phase) and for (bubbling phase  starts from bottom to top)
+            );
+            parent.addEventListener("click", () =>
+                console.log("Parent - Bubbling")
+            );
+            grandparent.addEventListener("click", () =>
+                console.log("Grandparent - Bubbling") 
+            );   
+        });
+
+    </script>
+</head>
+
+<body>
+    <h3>Capturing,Target and Bubbling</h3>
+    <div id="grandparent">
+        <div id="parent">
+            <button id="child">Click me </button>
+        </div>
+    </div>
+
+    <h3>stopPropagation()</h3>
+    <div id="navbar">
+        <button id="home">Home</button>
+    </div>
+    <script>
+        const navbar = document.getElementById("navbar"); //crating variable to store and so event action(to use html element in javascript)
+        const home = document.getElementById("home");
+        //without stop propagation (follow bubbling phase )
+        navbar.addEventListener("click",()=>{
+            console.log("Navbar clicked");
+        });
+        home.addEventListener("click",()=>{
+            event.stopPropagation(); //to stop propagation (to stop going upward) from click 
+            console.log("Home clicked");
+        });
+    </script>
+
+    <h3>preventDefault</h3>
+    <form id="myForm">
+        <input type="text" placeholder="Enter Name">
+        <button type="submit">Submit</button>
+    </form>
+     <p id="msg"></p> <!--to display output in bottom -->
+    <script>
+        document.getElementById("myForm").addEventListener("submit",function (event) {
+            event.preventDefault();  //stop page reload
+            document.getElementById("msg").textContent="Form submission stopped!"; 
+        });
+    </script>
+
+    <h3>Event delegation</h3>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>contact</li>
+    </ul>
+    <script>
+        // const ul = document.getElementById("menu");
+        // ul.addEventListener("click",(e)=>{
+        //     if(e.target.tagName === "LI"){  //handling over 
+        //         console.log("item clicked");
+        //     }
+        // });
+
+        const menu = document.getElementById("menu");
+        menu.addEventListener("click",function (event) {
+            if(event.target.tagName === "LI"){
+                console.log(event.target.textContent); //we target we tag user clicked 
+            }
+        });
+    </script>
+</body>
+
+</html>
